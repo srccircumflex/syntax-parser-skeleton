@@ -1,10 +1,10 @@
 from re import compile
 
-from syntax_parser_skeleton import baseobjekts
+from syntax_parser_skeleton import *
 from syntax_parser_skeleton.derivatives import simpleregex
 from syntax_parser_skeleton import visualisation
 
-root = baseobjekts.Root("#root")
+root = RootPhrase("#root")
 
 _bracket = simpleregex.SimpleRegexPhrase(compile('\\('), compile('\\)'), id="bracket").add_self()
 _funcall = simpleregex.SimpleRegexPhrase(compile('\\w+\\s*\\('), compile('\\)'), id="function")
@@ -29,5 +29,5 @@ result = root.parse([
     ") + a",
 ])
 
-# print(visualisation.pretty_xml_result(result))
-# visualisation.start_structure_graph_app(root)
+print(visualisation.pretty_xml_result(result))
+visualisation.start_structure_graph_app(root)

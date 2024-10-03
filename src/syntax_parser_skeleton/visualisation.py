@@ -1,8 +1,4 @@
-try:
-    from baseobjekts import Root, Branch
-except ImportError:
-    from typing import Any
-    Root = Branch = Any
+from syntax_parser_skeleton import RootPhrase, Branch
 
 
 def pretty_xml_result(branch: Branch) -> str:
@@ -10,7 +6,7 @@ def pretty_xml_result(branch: Branch) -> str:
     return xml.dom.minidom.parseString(repr(branch)).toprettyxml()
 
 
-def start_structure_graph_app(root: Root):
+def start_structure_graph_app(root: RootPhrase):
     from dash import Dash, html
     import dash_cytoscape as cyto
 

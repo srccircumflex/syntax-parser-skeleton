@@ -1,23 +1,18 @@
 from re import search, Pattern
-from typing import Any
 
-from .. import baseobjekts
-
-
-class SimpleRegexNodeToken(baseobjekts.NodeToken):
-    ...
+from syntax_parser_skeleton import *
 
 
-class SimpleRegexBranch(baseobjekts.Branch):
+class SimpleRegexBranch(Branch):
 
     stop_pattern: Pattern[str]
 
-    def ends(self, row_content: str, row_n: int, row_cursor: int, abs_cursor: int) -> baseobjekts.Token | None:
+    def ends(self, row_content: str, row_n: int, row_cursor: int, abs_cursor: int) -> NodeToken:
         if m := search(self.stop_pattern, row_content):
-            return SimpleRegexNodeToken(m.start(), m.end(), m.group(), row_n, row_cursor, abs_cursor, self)
+            return NodeToken(m.start(), m.end(), m.group(), row_n, row_cursor, abs_cursor, self)
 
 
-class SimpleRegexPhrase(baseobjekts.Phrase):
+class SimpleRegexPhrase(Phrase):
     start_pattern: Pattern[str]
     stop_pattern: Pattern[str]
 
