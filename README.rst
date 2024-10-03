@@ -83,6 +83,7 @@ Example
 =======
 
 .. code-block::
+    python
 
     from re import compile
 
