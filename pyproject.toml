@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "syntax-parser-skeleton"
+authors = [
+    {name = "Adrian F. Hoefflin", email = "srccircumflex@outlook.com"},
+]
+description = "skeleton of a sytaxparser"
+readme = {file = "README.rst", content-type = "text/x-rst"}
+keywords = [
+    "syntax", "parser", "skeleton", "compiler", "framework"
+]
+license = {text = "MIT License"}
+classifiers = [
+    "Topic :: Text Processing",
+    "Topic :: Software Development :: Libraries :: Application Frameworks",
+    "Topic :: Software Development :: Interpreters",
+    "Topic :: Software Development :: Compilers",
+    "Topic :: Software Development",
+    "Programming Language :: Python",
+]
+dynamic = ["version"]
+
+[project.optional-dependencies]
+visualisation = [
+    "dash",
+    "dash-cytoscape",
+]
+
+[tool.setuptools.dynamic]
+version = {attr = "syntax_parser_skeleton.__version__"}
+
+[project.urls]
+Homepage = "https://github.com/srccircumflex/syntax-parser-skeleton"
