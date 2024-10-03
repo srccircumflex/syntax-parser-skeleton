@@ -91,7 +91,7 @@ Example
     from derivatives import simpleregex
     import visualisation
 
-    root = baseobjekts.Root("R!")
+    root = baseobjekts.Root("#root")
 
     _bracket = simpleregex.SimpleRegexPhrase(compile('\\('), compile('\\)'), id="bracket").add_self()
     _funcall = simpleregex.SimpleRegexPhrase(compile('\\w+\\s*\\('), compile('\\)'), id="function")
