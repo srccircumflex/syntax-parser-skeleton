@@ -118,6 +118,7 @@ Example
 
 
 .. code-block::
+    python
 
     visualisation.start_dependency_graph_app(root)
 
@@ -125,10 +126,12 @@ Example
     :align: center
 
 .. code-block::
+    python
 
     print(visualisation.pretty_xml_result(result))
 
 .. code-block::
+    xml
 
     <?xml version="1.0" ?>
     <RB phrase="R!">
