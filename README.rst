@@ -122,7 +122,7 @@ Example
 
     visualisation.start_dependency_graph_app(root)
 
-.. image:: doc/graph.png
+.. image:: https://raw.githubusercontent.com/srccircumflex/syntax-parser-skeleton/master/doc/graph.png
     :align: center
 
 .. code-block::
