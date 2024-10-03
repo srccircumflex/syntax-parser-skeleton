@@ -1,7 +1,7 @@
 from re import search, Pattern
 from typing import Any
 
-import baseobjekts
+from .. import baseobjekts
 
 
 class SimpleRegexNodeToken(baseobjekts.NodeToken):

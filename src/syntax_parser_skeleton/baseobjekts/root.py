@@ -3,7 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Any
 
-from baseobjekts.components import Phrase, Branch, Token, NodeToken
+from ..baseobjekts.components import Phrase, Branch, Token, NodeToken
 
 
 class RootToken(Token):

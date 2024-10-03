@@ -1,7 +1,8 @@
 try:
     from baseobjekts import Root, Branch
 except ImportError:
-    pass
+    from typing import Any
+    Root = Branch = Any
 
 
 def pretty_xml_result(branch: Branch) -> str:

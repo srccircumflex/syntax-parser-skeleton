@@ -1,8 +1,8 @@
 from re import compile
 
-import baseobjekts
-from derivatives import simpleregex
-import visualisation
+from syntax_parser_skeleton import baseobjekts
+from syntax_parser_skeleton.derivatives import simpleregex
+from syntax_parser_skeleton import visualisation
 
 root = baseobjekts.Root("#root")
 
