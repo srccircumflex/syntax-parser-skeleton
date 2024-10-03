@@ -30,4 +30,4 @@ result = root.parse([
 ])
 
 # print(visualisation.pretty_xml_result(result))
-# visualisation.start_dependency_graph_app(root)
+# visualisation.start_structure_graph_app(root)

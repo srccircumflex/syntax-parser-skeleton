@@ -120,7 +120,7 @@ Example
 .. code-block::
     python
 
-    visualisation.start_dependency_graph_app(root)
+    visualisation.start_structure_graph_app(root)
 
 .. image:: https://raw.githubusercontent.com/srccircumflex/syntax-parser-skeleton/master/doc/graph.png
     :align: center

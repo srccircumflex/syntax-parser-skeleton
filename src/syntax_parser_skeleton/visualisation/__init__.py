@@ -9,7 +9,7 @@ def pretty_xml_result(branch: Branch) -> str:
     return xml.dom.minidom.parseString(repr(branch)).toprettyxml()
 
 
-def start_dependency_graph_app(root: Root):
+def start_structure_graph_app(root: Root):
     from dash import Dash, html
     import dash_cytoscape as cyto
 
