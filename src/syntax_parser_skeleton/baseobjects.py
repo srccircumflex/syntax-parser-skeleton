@@ -159,10 +159,10 @@ class Branch(Token):
 
     def gen_linear(self) -> Generator[Token, Any, None]:
         for i in self.stack:
-            if isinstance(i, Token):
-                yield i
-            else:
+            if isinstance(i, Branch):
                 yield from i.gen_linear()
+            else:
+                yield i
 
     def ends(
             self,
@@ -318,11 +318,11 @@ class RootPhrase(Phrase):
                 self.branch = self.branch.branch
                 self.remain_row_content = self.remain_row_content[active_stop.match_rel_end:]
                 self.abs_viewpoint += active_stop.match_rel_end
+                active_stop.call_branch_end()
                 if not self.remain_row_content:
                     _nextrow()
                 else:
                     self.row_viewpoint += active_stop.match_rel_end
-                active_stop.call_branch_end()
 
             if sub_starts:
                 sub_start = min(sub_starts)
@@ -339,11 +339,11 @@ class RootPhrase(Phrase):
                     self.branch = sub_start
                     self.remain_row_content = self.remain_row_content[sub_start.start_node.match_rel_end:]
                     self.abs_viewpoint += sub_start.start_node.match_rel_end
+                    sub_start.start_node.call_branch_start()
                     if not self.remain_row_content:
                         _nextrow()
                     else:
                         self.row_viewpoint += sub_start.start_node.match_rel_end
-                    sub_start.start_node.call_branch_start()
             elif active_stop:
                 _active_stop()
             else:
